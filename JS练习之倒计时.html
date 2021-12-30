@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./utils.js"></script>
+    <script>
+        var target = new Date('2022-1-20 6:00:00')
+        setInterval(function () {
+            var currentTime = new Date()
+            var diff = getTimeDifference(currentTime, target)
+            dayBox.innerText = diff.day
+            hourBox.innerText = diff.hour
+            minuteBox.innerText = diff.minutes
+            secondBox.innerText = diff.seconds
+        }, 1000)
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+        background: -moz-linear-gradient(45deg, rgb(247, 69, 75), rgb(252, 136, 231));
+
+        background: -webkit-linear-gradient(45deg, rgb(247, 69, 75), rgb(252, 136, 231));
+
+        background: repeating-linear-gradient(45deg, rgb(247, 69, 75), rgb(252, 136, 231));
+        background-size: cover;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    .box {
+        width: 400px;
+        height: 300px;
+        margin: 100px auto;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: large;
+        position: relative;
+        /* 背景自适应代码 */
+        background-repeat: no-repeat;
+        background: url(生日11.png);
+        background-size: cover;
+        background-position: center center;
+        color: ivory;
+    }
+
+    .box div {
+        position: absolute;
+        top: 50px;
+        font-size: 2rem;
+        text-shadow: 3px 3px 5px white;
+    }
+
+    .box span {
+        margin: 0 5px;
+        border: 1px solid;
+        background: rgba(247, 88, 114, 0.623);
+        width: 50px;
+        height: 40px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 2px 5px white;
+        font-size: 2.5rem;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div>距离我们的一周年还有</div>
+        <span id="dayBox">我</span>天
+        <span id="hourBox">爱</span>小时
+        <span id="minuteBox">你</span>分钟
+        <span id="secondBox">♥</span>秒
+    </div>
+
+</body>
+
+</html>
